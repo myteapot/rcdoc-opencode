@@ -364,13 +364,13 @@ async function testApi(api) {
             role: 'user',
             content: [{ type: 'input_text', text: api.message }]
           }],
-          stream: false
+          stream: true
         }
       } else {
         body = {
           model: api.selectedModel,
           messages: [{ role: 'user', content: api.message }],
-          stream: false
+          stream: true
         }
       }
     } else if (api.id === 'claude') {
@@ -386,10 +386,10 @@ async function testApi(api) {
           content: [{ type: 'text', text: api.message }]
         }],
         max_tokens: 1024,
-        stream: false
+        stream: true
       }
     } else if (api.id === 'gemini') {
-      url = `https://right.codes/gemini/v1beta/models/${api.selectedModel}:generateContent`
+      url = `https://right.codes/gemini/v1beta/models/${api.selectedModel}:streamGenerateContent?alt=sse`
       headers = {
         'Content-Type': 'application/json',
         'x-goog-api-key': apiKey.value
@@ -409,8 +409,23 @@ async function testApi(api) {
       body: JSON.stringify(body)
     })
 
-    const data = await res.json()
-    response.value = JSON.stringify(data, null, 2)
+    if (!res.ok) {
+      const errorData = await res.text()
+      error.value = `请求失败 (${res.status}): ${errorData}`
+      return
+    }
+
+    // 处理流式响应
+    const reader = res.body.getReader()
+    const decoder = new TextDecoder()
+
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+
+      const chunk = decoder.decode(value, { stream: true })
+      response.value += chunk
+    }
   } catch (err) {
     error.value = `请求失败: ${err.message}`
   } finally {
