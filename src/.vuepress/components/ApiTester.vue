@@ -563,8 +563,8 @@ function getRequestUrl(api) {
   --text-primary: #1d1d1f;
   --text-secondary: #86868b;
   --border-color: rgba(0, 0, 0, 0.1);
-  --accent-color: #0071e3;
-  --accent-hover: #0077ed;
+  --accent-color: var(--theme-color, #e06b31);
+  --accent-hover: var(--rc-brand-light, #f07a3f);
   --input-bg: rgba(255, 255, 255, 0.8);
   --code-bg: rgba(30, 30, 30, 0.95);
   --code-header-bg: rgba(45, 45, 45, 0.95);
@@ -582,8 +582,8 @@ function getRequestUrl(api) {
   --text-primary: #f5f5f7;
   --text-secondary: #a1a1a6;
   --border-color: rgba(255, 255, 255, 0.1);
-  --accent-color: #0a84ff;
-  --accent-hover: #409cff;
+  --accent-color: var(--theme-color, #e06b31);
+  --accent-hover: var(--rc-brand-lighter, #ff9a66);
   --input-bg: rgba(44, 44, 46, 0.8);
   --code-bg: rgba(0, 0, 0, 0.6);
   --code-header-bg: rgba(28, 28, 30, 0.8);
@@ -643,7 +643,7 @@ function getRequestUrl(api) {
 .api-key-input:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+  box-shadow: 0 0 0 3px var(--rc-brand-tint, rgba(224, 107, 49, 0.18));
 }
 
 .api-key-input::placeholder {
@@ -741,7 +741,7 @@ function getRequestUrl(api) {
 .model-select:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+  box-shadow: 0 0 0 3px var(--rc-brand-tint, rgba(224, 107, 49, 0.18));
 }
 
 /* 请求地址样式 */
@@ -862,7 +862,7 @@ function getRequestUrl(api) {
 .message-input:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+  box-shadow: 0 0 0 3px var(--rc-brand-tint, rgba(224, 107, 49, 0.18));
 }
 
 .message-input::placeholder {
@@ -889,13 +889,13 @@ function getRequestUrl(api) {
   font-size: 15px;
   font-weight: 600;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 113, 227, 0.3);
+  box-shadow: 0 2px 10px rgba(224, 107, 49, 0.28);
 }
 
 .test-btn:hover:not(:disabled) {
   background: var(--accent-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.4);
+  box-shadow: 0 6px 16px rgba(224, 107, 49, 0.38);
 }
 
 .test-btn:disabled {
@@ -1022,7 +1022,7 @@ function getRequestUrl(api) {
 }
 
 .response-type-badge.stream {
-  background: #0a84ff;
+  background: var(--accent-color);
 }
 
 .clear-btn {

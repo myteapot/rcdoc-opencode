@@ -22,7 +22,7 @@ export default hopeTheme({
   sidebar,
 
   // 页脚
-  footer: "默认页脚",
+  footer: "Copyright © 2026-present Right Code",
   displayFooter: true,
 
   // 多语言配置
