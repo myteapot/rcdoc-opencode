@@ -202,7 +202,7 @@ footer: false
     <div class="payg-cards">
       <div class="payg-card codex">
         <div class="payg-icon">
-          <iconify-icon icon="simple-icons:openai" width="28" height="28"></iconify-icon>
+          <iconify-icon icon="hugeicons:chat-gpt" width="40" height="40"></iconify-icon>
         </div>
         <div class="payg-info">
           <span class="payg-name">Codex</span>
@@ -211,7 +211,7 @@ footer: false
       </div>
       <div class="payg-card claude">
         <div class="payg-icon">
-          <iconify-icon icon="simple-icons:anthropic" width="28" height="28"></iconify-icon>
+          <iconify-icon icon="logos:claude-icon" width="36" height="36"></iconify-icon>
         </div>
         <div class="payg-info">
           <span class="payg-name">Claude Max 号池</span>
@@ -362,15 +362,22 @@ const copyText = async (text, event) => {
   height: 52px;
   border-radius: 12px;
   flex-shrink: 0;
-  color: #fff;
+  /* 苹果风格磨砂玻璃效果 */
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-.advantage-icon.gateway { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
-.advantage-icon.pool { background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
-.advantage-icon.billing { background: linear-gradient(135deg, #27ae60 0%, #229954 100%); }
-.advantage-icon.cache { background: linear-gradient(135deg, #e67e22 0%, #d35400 100%); }
-.advantage-icon.speed { background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); }
-.advantage-icon.service { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+.advantage-icon.gateway,
+.advantage-icon.pool,
+.advantage-icon.billing,
+.advantage-icon.cache,
+.advantage-icon.speed,
+.advantage-icon.service {
+  color: #555;
+}
 
 .advantage-content h4 {
   margin: 0 0 6px 0;
@@ -594,6 +601,16 @@ const copyText = async (text, event) => {
 
 [data-theme="dark"] .advantage-content p {
   color: #a0a0a0;
+}
+
+/* 独家优势图标暗色模式 - 磨砂玻璃效果 */
+[data-theme="dark"] .advantage-icon {
+  background: rgba(80, 80, 80, 0.5);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  color: #ccc;
 }
 
 /* 转结剩余暗色模式 */
@@ -858,17 +875,6 @@ const copyText = async (text, event) => {
   justify-content: center;
   width: 48px;
   height: 48px;
-  border-radius: 10px;
-}
-
-.payg-card.codex .payg-icon {
-  background: linear-gradient(135deg, #10a37f 0%, #0d8c6d 100%);
-  color: #fff;
-}
-
-.payg-card.claude .payg-icon {
-  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-  color: #fff;
 }
 
 .payg-info {

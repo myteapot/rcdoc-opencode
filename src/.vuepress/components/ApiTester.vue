@@ -168,6 +168,9 @@
 <script setup>
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
 
+// 根据环境选择 API 基础地址
+const BASE_URL = import.meta.env.DEV ? '/rc-api' : 'https://right.codes'
+
 const apiKey = ref('')
 const showApiKey = ref(false)
 const activeApi = ref('codex')
@@ -418,7 +421,7 @@ async function testApi(api) {
 
     if (api.id === 'codex') {
       const endpoint = api.endpoints.find(e => e.name === api.selectedEndpoint)
-      url = `https://www.right.codes${endpoint.path}`
+      url = `${BASE_URL}${endpoint.path}`
       headers = {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${apiKey.value}`
@@ -441,7 +444,7 @@ async function testApi(api) {
         }
       }
     } else if (api.id === 'claude') {
-      url = 'https://www.right.codes/claude/v1/messages'
+      url = `${BASE_URL}/claude/v1/messages`
       headers = {
         'Content-Type': 'application/json',
         'x-api-key': apiKey.value
@@ -457,7 +460,7 @@ async function testApi(api) {
       }
     } else if (api.id === 'gemini') {
       const method = useStream ? 'streamGenerateContent?alt=sse' : 'generateContent'
-      url = `https://right.codes/gemini/v1beta/models/${api.selectedModel}:${method}`
+      url = `${BASE_URL}/gemini/v1beta/models/${api.selectedModel}:${method}`
       headers = {
         'Content-Type': 'application/json',
         'x-goog-api-key': apiKey.value

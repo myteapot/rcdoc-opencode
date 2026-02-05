@@ -1,4 +1,5 @@
 import { defineUserConfig } from "vuepress";
+import { viteBundler } from "@vuepress/bundler-vite";
 import theme from "./theme.js";
 
 export default defineUserConfig({
@@ -8,4 +9,18 @@ export default defineUserConfig({
 
   // 和 PWA 一起启用
   // shouldPrefetch: false,
+
+    bundler: viteBundler({
+    viteOptions: {
+      server: {
+        proxy: {
+          '/rc-api': {
+            target: 'https://right.codes',
+            changeOrigin: true,
+            rewrite: (path) => path.replace(/^\/rc-api/, ''),
+          },
+        },
+      },
+    },
+  }),
 });

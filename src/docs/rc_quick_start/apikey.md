@@ -14,7 +14,7 @@ footer: false
 3. 如果你只想使用Codex，建议直接开套餐包
 
 :::important 注意
-套餐包只能使用Codex，请不要买错！
+**套餐包只能使用Codex，请不要买错！**
 :::
 
 ![](/assets/image/rc_quick_start/rc-1.png)

@@ -57,9 +57,9 @@ export default sidebar({
             ],
         },
         {
-            text: "相关问题",
-            icon: "bi:patch-question-fill",
-            prefix: "rc_questions/",
+            text: "第三方使用",
+            icon: "streamline-freehand-color:plugin-jigsaw-puzzle",
+            prefix: "rc_extension/",
             children: [
                 {
                     text: "Curl调用示例",

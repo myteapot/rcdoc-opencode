@@ -1,6 +1,6 @@
 ---
-title: 手动配置Codex
-icon: hugeicons:chat-gpt
+title: 手动配置Gemini
+icon: vscode-icons:file-type-gemini
 order: 4
 footer: false
 ---

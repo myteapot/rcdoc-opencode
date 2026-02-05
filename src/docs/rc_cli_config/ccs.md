@@ -43,10 +43,10 @@ footer: false
   - 右下角点击添加
 
 ::: important
-我们的Claude Code目前有两个渠道：
+**我们的Claude Code目前有两个渠道：**
 
  - CC官渠：`https://right.codes/claude`
- - AWSQ逆向渠道：`https://right.codes/claude`
+ - AWSQ逆向渠道：`https://right.codes/claude-aws`
 
 如果你想使用不同的渠道，需要更改 `请求地址` 一栏内容
 :::

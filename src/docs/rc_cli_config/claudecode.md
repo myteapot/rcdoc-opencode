@@ -33,6 +33,14 @@ open "$HOME/.claude"
 这里以官渠CC作为示例，如果你想使用其他渠道，请更换 `ANTHROPIC_BASE_URL`
 :::
 
+::: important
+**我们的Claude Code目前有两个渠道：**
+
+ - CC官渠：`https://right.codes/claude`
+ - AWSQ逆向渠道：`https://right.codes/claude-aws`
+
+:::
+
 ```json
 {
   "env": {
