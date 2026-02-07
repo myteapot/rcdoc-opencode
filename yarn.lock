@@ -1491,7 +1491,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/shared@npm:3.5.27, @vue/shared@npm:^3.5.25":
+"@vue/shared@npm:3.5.27, @vue/shared@npm:^3.5.25, @vue/shared@npm:^3.5.27":
   version: 3.5.27
   resolution: "@vue/shared@npm:3.5.27"
   checksum: 10c0/c80a84464530d51cf3d5fa1aab6c3e9717e5901fbc1b8a8eb9962edfc02985c1e03e6dc6d0d205d10cdff067c1c5f689d7156446d2a4c7686a8409a40e3a5f20
@@ -1606,6 +1606,22 @@ __metadata:
   peerDependencies:
     vuepress: 2.0.0-rc.26
   checksum: 10c0/a08c383a2ffda6481af651913134195374f7264e63a7f80201b787ce62e34722177fa1e549346a42c5034b72d3c12b85e4a066068aa4381986b355183956a0fb
+  languageName: node
+  linkType: hard
+
+"@vuepress/helper@npm:2.0.0-rc.122":
+  version: 2.0.0-rc.122
+  resolution: "@vuepress/helper@npm:2.0.0-rc.122"
+  dependencies:
+    "@vue/shared": "npm:^3.5.27"
+    "@vueuse/core": "npm:^14.2.0"
+    cheerio: "npm:^1.2.0"
+    fflate: "npm:^0.8.2"
+    gray-matter: "npm:^4.0.3"
+    vue: "npm:^3.5.27"
+  peerDependencies:
+    vuepress: 2.0.0-rc.26
+  checksum: 10c0/5327f191e72da12eacb80149b276d799a4b312eac083132296ce47cb7d7632d1a8bd2dfecad59c55c44750f2f0fc0ef87b80ff15581c7ebdaa90272364d9ffe6
   languageName: node
   linkType: hard
 
@@ -2103,6 +2119,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vuepress/plugin-slimsearch@npm:^2.0.0-rc.122":
+  version: 2.0.0-rc.122
+  resolution: "@vuepress/plugin-slimsearch@npm:2.0.0-rc.122"
+  dependencies:
+    "@vuepress/helper": "npm:2.0.0-rc.122"
+    "@vueuse/core": "npm:^14.2.0"
+    cheerio: "npm:^1.2.0"
+    chokidar: "npm:^5.0.0"
+    slimsearch: "npm:^2.3.0"
+    vue: "npm:^3.5.27"
+  peerDependencies:
+    vuepress: 2.0.0-rc.26
+  checksum: 10c0/bec0aa57ba9dc29be92ad3988596189bc9764aba4651d78ae2a94d6fbb90a75721789198b85498672f8396438ea1ccf619c9cb04b5eddd888efac1dcd52b634f
+  languageName: node
+  linkType: hard
+
 "@vuepress/plugin-theme-data@npm:2.0.0-rc.120":
   version: 2.0.0-rc.120
   resolution: "@vuepress/plugin-theme-data@npm:2.0.0-rc.120"
@@ -2145,7 +2177,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:^14.0.0, @vueuse/core@npm:^14.1.0":
+"@vueuse/core@npm:^14.0.0, @vueuse/core@npm:^14.1.0, @vueuse/core@npm:^14.2.0":
   version: 14.2.0
   resolution: "@vueuse/core@npm:14.2.0"
   dependencies:
@@ -2392,7 +2424,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cheerio@npm:^1.1.2":
+"cheerio@npm:^1.1.2, cheerio@npm:^1.2.0":
   version: 1.2.0
   resolution: "cheerio@npm:1.2.0"
   dependencies:
@@ -3906,6 +3938,7 @@ __metadata:
   resolution: "rcode-docs@workspace:."
   dependencies:
     "@vuepress/bundler-vite": "npm:2.0.0-rc.26"
+    "@vuepress/plugin-slimsearch": "npm:^2.0.0-rc.122"
     sass-embedded: "npm:^1.97.1"
     vue: "npm:^3.5.26"
     vuepress: "npm:2.0.0-rc.26"
@@ -4417,6 +4450,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"slimsearch@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "slimsearch@npm:2.3.0"
+  checksum: 10c0/7199533cb6be5d2232d52e3c6a5fb7a9a61f42d47df0666412654d77fa6200993ac7ea32591c045f3013cd8fff4784838c4cdaf125b6b65bcc3de828d909dfcb
+  languageName: node
+  linkType: hard
+
 "smart-buffer@npm:^4.2.0":
   version: 4.2.0
   resolution: "smart-buffer@npm:4.2.0"
@@ -4865,7 +4905,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^3.5.22, vue@npm:^3.5.25, vue@npm:^3.5.26":
+"vue@npm:^3.5.22, vue@npm:^3.5.25, vue@npm:^3.5.26, vue@npm:^3.5.27":
   version: 3.5.27
   resolution: "vue@npm:3.5.27"
   dependencies:
