@@ -9,6 +9,14 @@
   --font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-family-code: 'JetBrains Mono', 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   
+  // Brand (Right Code Orange)
+  --rc-brand: #e06b31;
+  --rc-brand-dark: #c85b28;
+  --rc-brand-darker: #a84b21;
+  --rc-brand-light: #f07a3f;
+  --rc-brand-lighter: #ff9a66;
+  --rc-brand-tint: rgba(224, 107, 49, 0.18);
+
   // Custom glass variables
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: 1px solid rgba(255, 255, 255, 0.2);
@@ -28,6 +36,7 @@ html {
 html[data-theme="dark"] {
   --glass-bg: rgba(17, 24, 39, 0.7); // Darker glass for dark mode
   --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+  --rc-brand-tint: rgba(224, 107, 49, 0.24);
 }
 
 body {
@@ -79,6 +88,115 @@ body {
 div[class*="language-"] {
   border-radius: 12px !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+// Shiki code blocks: make background warmer to match the orange brand
+div[data-highlighter="shiki"] {
+  --shiki-light-bg: #fff7f2 !important;
+  --shiki-dark-bg: #1f1612 !important;
+
+  border: 1px solid rgba(224, 107, 49, 0.14) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(224, 107, 49, 0.1) !important;
+}
+
+div[data-highlighter="shiki"]:hover {
+  border-color: rgba(224, 107, 49, 0.32) !important;
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(224, 107, 49, 0.14),
+    0 18px 54px rgba(224, 107, 49, 0.14) !important;
+}
+
+html[data-theme="dark"] div[data-highlighter="shiki"] {
+  border-color: rgba(224, 107, 49, 0.18) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(224, 107, 49, 0.12) !important;
+}
+
+html[data-theme="dark"] div[data-highlighter="shiki"]:hover {
+  border-color: rgba(224, 107, 49, 0.38) !important;
+  box-shadow:
+    0 14px 38px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(224, 107, 49, 0.14),
+    0 20px 60px rgba(224, 107, 49, 0.18) !important;
+}
+
+// 独家优势（intro）卡片：使用主题色发光
+.vp-page .advantage-grid .advantage-card {
+  border-color: rgba(224, 107, 49, 0.14);
+  background: linear-gradient(135deg, #fff 0%, #fff7f2 100%);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(224, 107, 49, 0.06);
+}
+
+.vp-page .advantage-grid .advantage-card:hover {
+  border-color: rgba(224, 107, 49, 0.38);
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(224, 107, 49, 0.16),
+    0 18px 52px rgba(224, 107, 49, 0.18);
+}
+
+.vp-page .advantage-grid .advantage-icon {
+  color: var(--theme-color);
+  border-color: rgba(224, 107, 49, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(224, 107, 49, 0.12), 0 14px 38px rgba(224, 107, 49, 0.16);
+}
+
+html[data-theme="dark"] .vp-page .advantage-grid .advantage-card {
+  border-color: rgba(224, 107, 49, 0.18);
+  background: linear-gradient(135deg, rgba(45, 45, 45, 0.72) 0%, rgba(34, 26, 22, 0.72) 100%);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(224, 107, 49, 0.08);
+}
+
+html[data-theme="dark"] .vp-page .advantage-grid .advantage-card:hover {
+  border-color: rgba(224, 107, 49, 0.42);
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(224, 107, 49, 0.16),
+    0 20px 54px rgba(224, 107, 49, 0.2);
+}
+
+html[data-theme="dark"] .vp-page .advantage-grid .advantage-icon {
+  border-color: rgba(224, 107, 49, 0.22);
+  box-shadow: 0 0 0 1px rgba(224, 107, 49, 0.14), 0 12px 34px rgba(224, 107, 49, 0.18);
+}
+
+// ----------------------------------------------------------------
+// Home Page Brand Overrides (Do NOT touch Markdown content)
+// ----------------------------------------------------------------
+
+// 首页样式在 Markdown 内使用了 <style scoped> 并写死了紫色系变量。
+// 这里通过更高优先级 + !important 覆盖变量与关键色块，保持不改动文档内容。
+.home-page {
+  --primary-color: var(--rc-brand) !important;
+  --primary-glow: rgba(224, 107, 49, 0.4) !important;
+  --secondary-color: var(--rc-brand-light) !important;
+  --accent-color: var(--rc-brand-lighter) !important;
+}
+
+.home-page .grid-overlay {
+  background-image: 
+    linear-gradient(rgba(224, 107, 49, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(224, 107, 49, 0.03) 1px, transparent 1px) !important;
+}
+
+.home-page .badge {
+  background: rgba(224, 107, 49, 0.1) !important;
+}
+
+.home-page .glass-card:hover {
+  border-color: rgba(224, 107, 49, 0.3) !important;
+}
+
+.home-page .feature-icon-wrapper {
+  background: linear-gradient(
+    135deg,
+    rgba(224, 107, 49, 0.12),
+    rgba(240, 122, 63, 0.1)
+  ) !important;
+}
+
+.home-page .integration-section {
+  background: linear-gradient(180deg, transparent, rgba(224, 107, 49, 0.03)) !important;
 }
 
 // ----------------------------------------------------------------

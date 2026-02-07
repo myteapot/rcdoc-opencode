@@ -131,6 +131,13 @@ onMounted(() => {
 /* 模型广场容器 */
 .models-plaza {
   margin: 20px 0;
+  --rc-accent: var(--theme-color, #e06b31);
+  --rc-accent-hover: var(--rc-brand-light, #f07a3f);
+  --rc-accent-soft-bg: rgba(224, 107, 49, 0.08);
+  --rc-accent-soft-bg-hover: rgba(224, 107, 49, 0.15);
+  --rc-accent-border-soft: rgba(224, 107, 49, 0.18);
+  --rc-accent-border: rgba(224, 107, 49, 0.25);
+  --rc-accent-gradient: linear-gradient(135deg, rgba(224, 107, 49, 0.08) 0%, rgba(240, 122, 63, 0.05) 100%);
 }
 
 /* 加载状态 */
@@ -148,7 +155,7 @@ onMounted(() => {
   width: 40px;
   height: 40px;
   border: 3px solid #f0f0f0;
-  border-top-color: #3498db;
+  border-top-color: var(--rc-accent);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -173,7 +180,7 @@ onMounted(() => {
   padding: 8px 20px;
   border: none;
   border-radius: 8px;
-  background: #3498db;
+  background: var(--rc-accent);
   color: #fff;
   font-size: 14px;
   cursor: pointer;
@@ -181,7 +188,7 @@ onMounted(() => {
 }
 
 .retry-btn:hover {
-  background: #2980b9;
+  background: var(--rc-accent-hover);
 }
 
 /* 分组样式 */
@@ -226,10 +233,10 @@ onMounted(() => {
   gap: 6px;
   font-size: 13px;
   color: #5a6d82;
-  background: linear-gradient(135deg, rgba(52, 152, 219, 0.06) 0%, rgba(155, 89, 182, 0.04) 100%);
+  background: var(--rc-accent-gradient);
   padding: 6px 12px;
   border-radius: 6px;
-  border-left: 3px solid #3498db;
+  border-left: 3px solid var(--rc-accent);
   line-height: 1.4;
 }
 
@@ -238,17 +245,17 @@ onMounted(() => {
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  background: rgba(52, 152, 219, 0.08);
+  background: var(--rc-accent-soft-bg);
   border-radius: 8px;
   font-size: 13px;
-  color: #3498db;
+  color: var(--rc-accent);
   cursor: pointer;
   transition: all 0.2s ease;
-  border: 1px solid rgba(52, 152, 219, 0.15);
+  border: 1px solid var(--rc-accent-border-soft);
 }
 
 .base-url:hover {
-  background: rgba(52, 152, 219, 0.15);
+  background: var(--rc-accent-soft-bg-hover);
 }
 
 .base-url.copied {
@@ -292,7 +299,7 @@ onMounted(() => {
 .model-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  border-color: rgba(52, 152, 219, 0.2);
+  border-color: rgba(224, 107, 49, 0.25);
 }
 
 .model-card.unavailable {
@@ -354,14 +361,14 @@ onMounted(() => {
   height: 32px;
   border: none;
   border-radius: 8px;
-  background: rgba(52, 152, 219, 0.08);
-  color: #3498db;
+  background: var(--rc-accent-soft-bg);
+  color: var(--rc-accent);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .copy-model-btn:hover {
-  background: rgba(52, 152, 219, 0.15);
+  background: var(--rc-accent-soft-bg-hover);
   transform: scale(1.05);
 }
 
@@ -398,7 +405,7 @@ onMounted(() => {
 }
 
 .price-item.input .price-value {
-  color: #3498db;
+  color: var(--rc-accent);
 }
 
 .price-item.output .price-value {
@@ -406,7 +413,7 @@ onMounted(() => {
 }
 
 .price-item.request .price-value {
-  color: #e67e22;
+  color: var(--rc-accent);
 }
 
 /* 计费模式标签 */
@@ -421,13 +428,13 @@ onMounted(() => {
 }
 
 .model-badge.token {
-  background: rgba(52, 152, 219, 0.1);
-  color: #3498db;
+  background: rgba(224, 107, 49, 0.12);
+  color: var(--rc-accent);
 }
 
 .model-badge.request {
-  background: rgba(230, 126, 34, 0.1);
-  color: #e67e22;
+  background: rgba(224, 107, 49, 0.12);
+  color: var(--rc-accent);
 }
 
 /* 响应式适配 */
@@ -483,18 +490,18 @@ onMounted(() => {
 
 [data-theme="dark"] .group-remark {
   color: #a8c5da;
-  background: linear-gradient(135deg, rgba(52, 152, 219, 0.12) 0%, rgba(155, 89, 182, 0.08) 100%);
-  border-left-color: #64b5f6;
+  background: linear-gradient(135deg, rgba(224, 107, 49, 0.16) 0%, rgba(240, 122, 63, 0.1) 100%);
+  border-left-color: var(--rc-accent);
 }
 
 [data-theme="dark"] .base-url {
-  background: rgba(52, 152, 219, 0.15);
-  border-color: rgba(52, 152, 219, 0.25);
-  color: #64b5f6;
+  background: rgba(224, 107, 49, 0.16);
+  border-color: rgba(224, 107, 49, 0.28);
+  color: var(--rc-accent);
 }
 
 [data-theme="dark"] .base-url:hover {
-  background: rgba(52, 152, 219, 0.25);
+  background: rgba(224, 107, 49, 0.26);
 }
 
 [data-theme="dark"] .model-card {
@@ -505,7 +512,7 @@ onMounted(() => {
 
 [data-theme="dark"] .model-card:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  border-color: rgba(52, 152, 219, 0.3);
+  border-color: rgba(224, 107, 49, 0.35);
 }
 
 [data-theme="dark"] .model-name {
@@ -517,12 +524,12 @@ onMounted(() => {
 }
 
 [data-theme="dark"] .copy-model-btn {
-  background: rgba(52, 152, 219, 0.15);
-  color: #64b5f6;
+  background: rgba(224, 107, 49, 0.16);
+  color: var(--rc-accent);
 }
 
 [data-theme="dark"] .copy-model-btn:hover {
-  background: rgba(52, 152, 219, 0.25);
+  background: rgba(224, 107, 49, 0.26);
 }
 
 [data-theme="dark"] .price-item {
@@ -538,7 +545,7 @@ onMounted(() => {
 }
 
 [data-theme="dark"] .price-item.input .price-value {
-  color: #64b5f6;
+  color: var(--rc-accent);
 }
 
 [data-theme="dark"] .price-item.output .price-value {
@@ -550,13 +557,13 @@ onMounted(() => {
 }
 
 [data-theme="dark"] .model-badge.token {
-  background: rgba(52, 152, 219, 0.2);
-  color: #64b5f6;
+  background: rgba(224, 107, 49, 0.22);
+  color: var(--rc-accent);
 }
 
 [data-theme="dark"] .model-badge.request {
-  background: rgba(230, 126, 34, 0.2);
-  color: #ffb74d;
+  background: rgba(224, 107, 49, 0.22);
+  color: var(--rc-accent);
 }
 
 [data-theme="dark"] .loading-state {
@@ -565,7 +572,7 @@ onMounted(() => {
 
 [data-theme="dark"] .loading-spinner {
   border-color: #3a3a3a;
-  border-top-color: #64b5f6;
+  border-top-color: var(--rc-accent);
 }
 
 [data-theme="dark"] .error-state {
@@ -573,10 +580,10 @@ onMounted(() => {
 }
 
 [data-theme="dark"] .retry-btn {
-  background: #64b5f6;
+  background: var(--rc-accent);
 }
 
 [data-theme="dark"] .retry-btn:hover {
-  background: #42a5f5;
+  background: var(--rc-accent-hover);
 }
 </style>

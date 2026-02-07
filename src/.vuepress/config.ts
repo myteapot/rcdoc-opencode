@@ -10,8 +10,16 @@ export default defineUserConfig({
   // 和 PWA 一起启用
   // shouldPrefetch: false,
 
-    bundler: viteBundler({
+  bundler: viteBundler({
     viteOptions: {
+      css: {
+        preprocessorOptions: {
+          scss: {
+            quietDeps: true,
+            silenceDeprecations: ["if-function"],
+          },
+        },
+      },
       server: {
         proxy: {
           '/rc-api': {
