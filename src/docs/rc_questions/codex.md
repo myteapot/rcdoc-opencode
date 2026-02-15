@@ -70,7 +70,7 @@ open "$HOME/.vscode/extensions"
 
 5. 下载如下的压缩包，解压后拿到js文件，将这个js文件复制到 `webview\assets` 目录，替换原有js文件
 
-<CodexDownload version="0.5.72" summary="已适配最新的 GPT-5.3-Codex 模型" />
+<CodexDownload version="0.5.75" summary="已适配最新的 GPT-5.3-Codex 模型" />
 
 6. 重启Vscode，观察模型列表是否有了最新的模型
 
